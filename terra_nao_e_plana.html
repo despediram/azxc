@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Terra Não É Plana — Evidências Definitivas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --navy-light: #1a3a6b;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --sky: #4fc3f7;
+    --sky-pale: #e0f4fd;
+    --text: #e8eaf0;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── STARFIELD ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 8%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 22%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 35%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 60% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 78% 12%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 48% 55%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 95% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 95%, rgba(255,255,255,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 400px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(79,195,247,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .globe-container {
+    position: relative;
+    margin-bottom: 2.5rem;
+    z-index: 1;
+  }
+
+  .globe-svg {
+    width: 180px;
+    height: 180px;
+    animation: floatGlobe 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 40px rgba(79,195,247,0.3));
+  }
+
+  @keyframes floatGlobe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+    max-width: 820px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sky);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-top: 1.25rem;
+    z-index: 1;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    z-index: 1;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.3rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    z-index: 1;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--text-dim);
+    border-bottom: 2px solid var(--text-dim);
+    transform: rotate(45deg);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0.75rem 2rem;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  .nav-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .nav-pill:hover {
+    color: var(--sky);
+    border-color: rgba(79,195,247,0.3);
+    background: rgba(79,195,247,0.06);
+  }
+
+  .nav-pill .icon { font-size: 1rem; }
+
+  /* ─── INTRO QUOTE ─── */
+  .intro-section {
+    max-width: 780px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .section-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .icon-blue { background: rgba(79,195,247,0.12); }
+  .icon-gold { background: rgba(201,168,76,0.12); }
+  .icon-green { background: rgba(104,211,145,0.12); }
+  .icon-coral { background: rgba(252,129,74,0.12); }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+
+  /* ─── ARGUMENT CARDS ─── */
+  .args-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .arg-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .arg-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sky), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .arg-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(79,195,247,0.2);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .arg-card:hover::before { opacity: 1; }
+
+  .arg-card.gold::before { background: linear-gradient(90deg, var(--gold), transparent); }
+  .arg-card.gold:hover { border-color: rgba(201,168,76,0.25); }
+
+  .arg-card.green::before { background: linear-gradient(90deg, #68d391, transparent); }
+  .arg-card.green:hover { border-color: rgba(104,211,145,0.25); }
+
+  .arg-card.coral::before { background: linear-gradient(90deg, #fc814a, transparent); }
+  .arg-card.coral:hover { border-color: rgba(252,129,74,0.25); }
+
+  .arg-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .arg-id {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .id-blue { background: rgba(79,195,247,0.15); color: var(--sky); }
+  .id-gold { background: rgba(201,168,76,0.15); color: var(--gold-light); }
+  .id-green { background: rgba(104,211,145,0.15); color: #68d391; }
+  .id-coral { background: rgba(252,129,74,0.15); color: #fc814a; }
+
+  .arg-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .arg-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  /* Tabs dentro do card */
+  .arg-tabs {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .arg-tab-btn {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    border: 1px solid var(--card-border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .arg-tab-btn.active, .arg-tab-btn:hover {
+    background: rgba(79,195,247,0.1);
+    border-color: rgba(79,195,247,0.3);
+    color: var(--sky);
+  }
+
+  .arg-panel {
+    display: none;
+    font-size: 0.87rem;
+    line-height: 1.65;
+    padding: 0.75rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    color: var(--text-muted);
+    animation: fadeIn 0.2s ease;
+  }
+
+  .arg-panel.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .arg-panel.leiga {
+    background: rgba(79,195,247,0.04);
+    border-left: 2px solid var(--sky);
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .arg-panel.principio {
+    background: rgba(201,168,76,0.04);
+    border-left: 2px solid var(--gold);
+    font-family: 'Source Sans 3', monospace;
+    font-size: 0.84rem;
+  }
+
+  .sources {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .sources-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .source-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    margin: 0.2rem 0.2rem 0 0;
+    line-height: 1.4;
+  }
+
+  /* ─── VISUAL PROOF HIGHLIGHT ─── */
+  .visual-proof {
+    background: linear-gradient(135deg, rgba(79,195,247,0.07), rgba(26,58,107,0.4));
+    border: 1px solid rgba(79,195,247,0.15);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .proof-globe-wrap {
+    flex-shrink: 0;
+  }
+
+  .proof-globe-wrap svg {
+    width: 100px;
+    height: 100px;
+    opacity: 0.9;
+  }
+
+  .proof-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .proof-text p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* ─── CONCLUSÃO ─── */
+  .conclusion {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-top: 1px solid var(--card-border);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .conclusion::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(79,195,247,0.08) 0%, transparent 70%);
+  }
+
+  .conclusion-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .conclusion-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .conclusion-inner p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .conclusion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 100px;
+    padding: 0.6rem 1.4rem;
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid var(--card-border);
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+  }
+
+  footer a { color: var(--sky); text-decoration: none; }
+
+  /* ─── UTILITIES ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--card-border);
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .hero-stats { gap: 1.5rem; }
+    .args-grid { grid-template-columns: 1fr; }
+    .visual-proof { flex-direction: column; }
+    .nav-inner { gap: 0.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="globe-container">
+    <svg class="globe-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="globeGrad" cx="38%" cy="35%">
+          <stop offset="0%" stop-color="#1e5fa8"/>
+          <stop offset="60%" stop-color="#0d3b7a"/>
+          <stop offset="100%" stop-color="#061c3d"/>
+        </radialGradient>
+        <radialGradient id="glowGrad" cx="50%" cy="50%">
+          <stop offset="60%" stop-color="transparent"/>
+          <stop offset="100%" stop-color="rgba(79,195,247,0.3)"/>
+        </radialGradient>
+        <clipPath id="clip"><circle cx="90" cy="90" r="80"/></clipPath>
+      </defs>
+      <!-- glow ring -->
+      <circle cx="90" cy="90" r="88" fill="none" stroke="rgba(79,195,247,0.2)" stroke-width="2"/>
+      <!-- base -->
+      <circle cx="90" cy="90" r="80" fill="url(#globeGrad)"/>
+      <!-- grid lines -->
+      <g clip-path="url(#clip)" stroke="rgba(79,195,247,0.18)" stroke-width="0.8" fill="none">
+        <ellipse cx="90" cy="90" rx="80" ry="25"/>
+        <ellipse cx="90" cy="90" rx="80" ry="55"/>
+        <ellipse cx="90" cy="60" rx="80" ry="15"/>
+        <ellipse cx="90" cy="120" rx="80" ry="15"/>
+        <line x1="90" y1="10" x2="90" y2="170"/>
+        <line x1="10" y1="90" x2="170" y2="90"/>
+        <path d="M55,10 Q70,90 55,170"/>
+        <path d="M125,10 Q110,90 125,170"/>
+        <path d="M30,25 Q55,90 30,155"/>
+        <path d="M150,25 Q125,90 150,155"/>
+      </g>
+      <!-- continents simplified -->
+      <g clip-path="url(#clip)" fill="rgba(104,211,145,0.55)" stroke="rgba(104,211,145,0.3)" stroke-width="0.5">
+        <!-- South America -->
+        <path d="M72,85 Q68,95 65,110 Q67,130 74,140 Q80,145 84,130 Q86,115 82,100 Q80,90 78,85Z"/>
+        <!-- Africa -->
+        <path d="M88,78 Q85,90 86,108 Q89,122 95,125 Q102,120 104,105 Q105,90 100,80 Q95,74 88,78Z"/>
+        <!-- Europe -->
+        <path d="M88,60 Q83,62 82,68 Q84,74 90,74 Q96,70 96,64 Q93,58 88,60Z"/>
+        <!-- North America -->
+        <path d="M45,52 Q38,60 40,75 Q44,88 52,90 Q60,88 64,78 Q66,65 60,54 Q52,48 45,52Z"/>
+        <!-- Asia -->
+        <path d="M100,55 Q108,58 118,64 Q126,72 120,80 Q110,84 100,78 Q96,70 100,55Z"/>
+        <!-- Australia -->
+        <path d="M128,108 Q122,112 124,122 Q128,128 136,126 Q142,120 138,112 Q134,106 128,108Z"/>
+      </g>
+      <!-- shine -->
+      <circle cx="68" cy="65" r="22" fill="rgba(255,255,255,0.06)"/>
+      <circle cx="90" cy="90" r="80" fill="url(#glowGrad)"/>
+    </svg>
+  </div>
+
+  <div class="hero-badge">Ciência · Evidências · Razão</div>
+
+  <h1>A Terra Não é Plana<br><em>Aqui estão as provas</em></h1>
+
+  <p class="hero-sub">
+    Um guia definitivo com mais de 20 argumentos científicos sólidos, explicações para todos os níveis e fontes verificáveis — porque a realidade não precisa de fé cega, precisa de evidências.
+  </p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">20+</div>
+      <div class="hero-stat-label">Argumentos</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">4</div>
+      <div class="hero-stat-label">Categorias</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">2.350</div>
+      <div class="hero-stat-label">Anos de ciência</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">0</div>
+      <div class="hero-stat-label">Conspirações</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Role para ver</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ─── NAVIGATION ─── -->
+<nav aria-label="Navegação por categoria">
+  <div class="nav-inner">
+    <a href="#astronomia" class="nav-pill"><span class="icon">🔭</span> Astronomia</a>
+    <a href="#terrestres" class="nav-pill"><span class="icon">🌊</span> Fenômenos Terrestres</a>
+    <a href="#engenharia" class="nav-pill"><span class="icon">📡</span> Navegação e Engenharia</a>
+    <a href="#espaco" class="nav-pill"><span class="icon">🛰️</span> Observação Espacial</a>
+  </div>
+</nav>
+
+<!-- ─── INTRO QUOTE ─── -->
+<div class="intro-section">
+  <blockquote class="big-quote">
+    "A crença na Terra Plana exige negar a física, a ótica, o magnetismo, a geologia, a história, o GPS, os voos, os cabos submarinos e as próprias estrelas acima de nossas cabeças — observáveis a olho nu, da sua janela."
+  </blockquote>
+</div>
+
+<hr class="divider">
+
+<!-- ═══ 1. ASTRONOMIA ═══ -->
+<section class="section" id="astronomia">
+  <div class="section-header">
+    <div class="section-icon icon-blue">🔭</div>
+    <div>
+      <h2 class="section-title">Observações Astronômicas e Celestes</h2>
+      <p class="section-desc">O céu nocturno é um laboratório aberto para qualquer pessoa com olhos e paciência.</p>
+    </div>
+  </div>
+
+  <div class="args-grid">
+
+    <!-- A1 -->
+    <div class="arg-card">
+      <div class="arg-header">
+        <span class="arg-id id-blue">A1</span>
+        <h3 class="arg-title">A Sombra da Terra nos Eclipses Lunares</h3>
+      </div>
+      <p class="arg-desc">Durante um eclipse lunar, a sombra da Terra projetada sobre a Lua é sempre circular. A única forma tridimensional que projeta sombra circular independente do ângulo de iluminação é uma esfera. Um disco plano projetaria sombras elípticas ou lineares na vasta maioria dos ângulos.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'a1','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'a1','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="a1-leiga">Faça um teste: coloque uma bola e um prato sob uma lanterna e veja a sombra que cada um faz na parede. A bola sempre faz um círculo. O prato faz um óvalo ou uma linha fina dependendo do ângulo. A Terra sempre faz um círculo na Lua durante eclipses — desde Aristóteles, há 2.350 anos.</div>
+      <div class="arg-panel principio" id="a1-principio">Geometria de projeção (umbra/penumbra): a única superfície fechada que é invariante sob rotação em todos os eixos é a esfera. Um disco de espessura finita só projetaria sombra circular se a fonte de luz incidisse exatamente perpendicular ao plano — evento geometricamente improvável em cada eclipse. Os eclipses ocorrem sob vários ângulos de inclinação orbital da Lua (±5,1°), eliminando a coincidência.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Aristóteles, "Do Céu", Livro II (350 a.C.)</span>
+        <span class="source-tag">NASA Eclipse Page — eclipses.gsfc.nasa.gov</span>
+        <span class="source-tag">Óptica Geométrica, Hecht (2002)</span>
+      </div>
+    </div>
+
+    <!-- A2 -->
+    <div class="arg-card">
+      <div class="arg-header">
+        <span class="arg-id id-blue">A2</span>
+        <h3 class="arg-title">Sol da Meia-Noite na Antártica</h3>
+      </div>
+      <p class="arg-desc">Entre dezembro e fevereiro, regiões ao sul do Círculo Polar Antártico têm luz solar contínua por semanas. O sol literalmente percorre um arco completo no céu sem se pôr. Isso é gravado em vídeo time-lapse por pesquisadores, turistas e militares anualmente.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'a2','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'a2','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="a2-leiga">Imagine um prato com uma lanterna girando em cima. A borda do prato nunca ficaria iluminada 24 horas sem que o centro também ficasse. Mas no polo sul real, o sol fica no céu ininterruptamente no verão. Isso só funciona numa bola inclinada girando ao redor do Sol.</div>
+      <div class="arg-panel principio" id="a2-principio">A inclinação axial da Terra de 23,5° garante que, no solstício de dezembro, o polo sul aponta para o Sol. A latitude do Círculo Polar Antártico é −66,5° = 90° − 23,5°. No modelo de disco terraplanista, o Sol hipotético local a ~5.000 km de altura iluminaria simultaneamente o polo norte e o polo sul se iluminasse 24h qualquer ponto da borda — o que contradiz o observado no Ártico no mesmo período.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Estação Amundsen-Scott (Polo Sul, EUA)</span>
+        <span class="source-tag">Estação Comandante Ferraz (Brasil, Antártica)</span>
+        <span class="source-tag">Time-lapses do sol polar — YouTube/documentários NatGeo</span>
+      </div>
+    </div>
+
+    <!-- A3 -->
+    <div class="arg-card">
+      <div class="arg-header">
+        <span class="arg-id id-blue">A3</span>
+        <h3 class="arg-title">Dois Centros de Rotação de Estrelas</h3>
+      </div>
+      <p class="arg-desc">No Hemisfério Norte, as estrelas giram em torno de Polaris (sentido anti-horário). No Hemisfério Sul, giram em torno do Polo Sul Celeste (sentido horário). Fotografias de longa exposição — "star trails" — confirmam isso em qualquer lugar do mundo.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'a3','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'a3','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="a3-leiga">No Canadá, as estrelas fazem um redemoinho em volta de uma estrela no norte. No Brasil, fazem um redemoinho diferente em volta de um ponto no sul. Num disco girando, haveria só um redemoinho central. Numa bola girando, cada polo vê o seu próprio "centro" oposto — exatamente o que observamos.</div>
+      <div class="arg-panel principio" id="a3-principio">A cinemática rotacional de uma esfera projeta dois polos celestes diametralmente opostos. Observadores no hemisfério sul veem estrelas circumpolares (ex: Cruz do Sul) descrevendo círculos completos em torno do Polo Sul Celeste a declinação −90°. No modelo de disco plano, observadores na borda sul veriam estrelas girando ao redor de Polaris, no centro norte — não ao redor de um polo sul diametralmente oposto inexistente nesse modelo.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Astrofotografia amadora (Flickr/500px)</span>
+        <span class="source-tag">Observatório do Paraná — OPD/LNA</span>
+        <span class="source-tag">Stellarium (software livre de planetário)</span>
+      </div>
+    </div>
+
+    <!-- A4 -->
+    <div class="arg-card">
+      <div class="arg-header">
+        <span class="arg-id id-blue">A4</span>
+        <h3 class="arg-title">Tamanho Angular Constante do Sol</h3>
+      </div>
+      <p class="arg-desc">O Sol mantém um diâmetro angular constante de ~0,53° ao longo de todo o dia. Se o Sol terraplanista pairasse a apenas 5.000 km e se afastasse para o "horizonte", seu tamanho aparente encolheria drasticamente — como um carro sumindo numa estrada reta.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'a4','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'a4','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="a4-leiga">Quando um carro se afasta de você, fica menor. Se o Sol fosse uma "lâmpada local" se afastando para o horizonte, também ficaria bem menor no fim do dia. Mas com um filtro solar em qualquer câmera, vemos que o Sol tem o mesmo tamanho no pôr do sol e ao meio-dia. Ele não se afasta — a Terra gira, escondendo ele atrás da curva.</div>
+      <div class="arg-panel principio" id="a4-principio">θ = 2 × arctan(r/d). A 150 milhões km (1 UA), a variação de distância causada pela rotação terrestre é de apenas ~0,008 UA na direção horizontal — insignificante. No modelo terraplanista, o sol a d=5.000 km no zênite vs. d ≈ 50.000 km no horizonte resultaria em θ reduzindo 10×, de ~0,5° para ~0,05°. Medição trivial com câmera e filtro solar refuta isso completamente.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Filtros Baader AstroSolar (medição amadora)</span>
+        <span class="source-tag">Solar Dynamics Observatory — NASA/SDO</span>
+        <span class="source-tag">Fotografia solar diária documentada</span>
+      </div>
+    </div>
+
+    <!-- A5 -->
+    <div class="arg-card">
+      <div class="arg-header">
+        <span class="arg-id id-blue">A5</span>
+        <h3 class="arg-title">Trânsito de Vênus e Mercúrio</h3>
+      </div>
+      <p class="arg-desc">Vênus e Mercúrio ocasionalmente cruzam o disco solar vistos da Terra. Esses trânsitos são calculados com precisão para séculos no futuro usando as Leis de Kepler. No modelo de disco, as órbitas seriam incoerentes e os trânsitos impossíveis de prever.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'a5','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'a5','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="a5-leiga">Às vezes dá para ver uma bolinha preta (Vênus) passando na frente do Sol. Isso prova que o Sol está muito atrás de Vênus. Os astrônomos calcularam exatamente quando isso acontece com séculos de antecedência — e acertam. Se tudo fosse uma "cúpula", as órbitas não teriam como funcionar assim.</div>
+      <div class="arg-panel principio" id="a5-principio">As Leis de Kepler (1619) e a gravidade de Newton (1687) predizem os trânsitos de Mercúrio e Vênus com precisão de segundos usando órbitas elípticas heliocêntricas em 3D. Em 1716, Halley propôs usar a paralaxe do trânsito de Vênus de múltiplos pontos terrestres para medir 1 UA — executado com sucesso em 1769 (Cook/Tahiti). Nenhum modelo de disco plano fornece equações que predizem esses eventos corretamente.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Johannes Kepler, "Harmonices Mundi" (1619)</span>
+        <span class="source-tag">Observação do Trânsito de Vênus — Expedição Cook (1769)</span>
+        <span class="source-tag">NASA Transit of Venus — nasa.gov</span>
+      </div>
+    </div>
+
+    <!-- A6 NOVO -->
+    <div class="arg-card">
+      <div class="arg-header">
+        <span class="arg-id id-blue">A6</span>
+        <h3 class="arg-title">Paralaxe Estelar e Distâncias Cósmicas</h3>
+      </div>
+      <p class="arg-desc">Ao fotografar a mesma estrela próxima com 6 meses de diferença (Terra em lados opostos da órbita solar), ela aparece em posições ligeiramente diferentes em relação ao fundo de estrelas distantes. Isso é mensurável com telescópios e prova que a Terra orbita o Sol numa esfera.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'a6','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'a6','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="a6-leiga">Feche um olho, aponte o dedo para um objeto próximo, depois alterne o olho aberto. O dedo "pula". Agora use os dois "olhos" a 300 milhões de km de distância (Terra em janeiro vs. julho) e observe estrelas próximas. Elas também "pulam" de forma mensurável — chamamos isso de paralaxe estelar. Isso confirma que a Terra se move em volta do Sol, em uma esfera.</div>
+      <div class="arg-panel principio" id="a6-principio">A paralaxe da estrela 61 Cygni foi medida pela primeira vez por Friedrich Bessel em 1838: p = 0,314 arcsec → distância = 1/p = 3,18 parsecs = 10,4 anos-luz. A medição requer que a Terra esteja em pontos diametralmente opostos de uma órbita circular de 1 UA de raio ao redor do Sol. O satélite Hipparcos (ESA) mediu paralaxes de 118.000 estrelas; o Gaia mediu mais de 1 bilhão com precisão de microarcossegundos.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Friedrich Bessel, Astronomische Nachrichten (1838)</span>
+        <span class="source-tag">ESA Gaia Mission — gea.esac.esa.int</span>
+        <span class="source-tag">ESA Hipparcos Catalogue (1997)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 2. FENÔMENOS TERRESTRES ═══ -->
+<section class="section" id="terrestres">
+  <div class="section-header">
+    <div class="section-icon icon-gold">🌊</div>
+    <div>
+      <h2 class="section-title">Fenômenos Terrestres, Físicos e Geológicos</h2>
+      <p class="section-desc">A própria superfície da Terra nos dá evidências que qualquer pessoa pode verificar.</p>
+    </div>
+  </div>
+
+  <div class="args-grid">
+
+    <!-- T1 -->
+    <div class="arg-card gold">
+      <div class="arg-header">
+        <span class="arg-id id-gold">T1</span>
+        <h3 class="arg-title">Navios Desaparecendo no Horizonte</h3>
+      </div>
+      <p class="arg-desc">Navios que se afastam desaparecem progressivamente de baixo para cima: primeiro o casco, depois a carroceria, por último o mastro. Usando um telescópio potente, não é possível "trazer o navio de volta" depois que o casco desaparece — há literalmente uma parede de água curvada entre você e ele.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'t1','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'t1','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="t1-leiga">Imagine uma formiga caminhando numa bola de basquete para longe de você. Primeiro as pernas somem atrás da curva, depois o corpo, depois as antenas. Com navios, acontece exatamente isso. Se a Terra fosse plana, um telescópio sempre poderia trazer o navio de volta à vista — mas não consegue.</div>
+      <div class="arg-panel principio" id="t1-principio">Fórmula da queda de curvatura: h = d² / (2R), com R = 6.371 km. A 10 km, a queda é ≈7,8 m. A 20 km, ≈31,4 m. Um navio com mastro de 50 m some completamente após ≈25 km. Experimento de Bedford Canal (1838, refutado o modelo plano por Alfred Russel Wallace em 1870 com controle de refração). A refração atmosférica atenua ligeiramente a curvatura observada, mas é bem modelada e não a elimina.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Alfred Russel Wallace, Bedford Level Experiment (1870)</span>
+        <span class="source-tag">Manuais de Navegação da Marinha — DTM</span>
+        <span class="source-tag">Equação de curvatura: h = d²/(2R)</span>
+      </div>
+    </div>
+
+    <!-- T2 -->
+    <div class="arg-card gold">
+      <div class="arg-header">
+        <span class="arg-id id-gold">T2</span>
+        <h3 class="arg-title">Campo Magnético com Dois Polos</h3>
+      </div>
+      <p class="arg-desc">A Terra possui campo magnético bipolar gerado pelo núcleo de ferro fundido em rotação. Auroras boreais ocorrem no norte e auroras austrais no sul simetricamente. Bússolas no Hemisfério Sul apontam inequivocamente para o Polo Sul magnético — não para Polaris, no norte.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'t2','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'t2','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="t2-leiga">No modelo terraplanista, o polo sul seria a borda do disco. Uma bússola na Austrália deveria apontar para a borda — mas ela aponta para baixo (polo sul magnético real), e as auroras australes surgem simétricas às boreais em volta de um polo sul real. Não há como isso funcionar num disco com apenas um polo no centro.</div>
+      <div class="arg-panel principio" id="t2-principio">O campo magnético terrestre é gerado por dinamo de convecção no núcleo externo de ferro-níquel líquido. O campo dipolar tem eixo inclinado ~11° em relação ao eixo de rotação. Auroras ocorrem nas zonas ovais polares em ambos os hemisférios simultaneamente quando CMEs solares atingem a magnetosfera. No modelo de disco, "Polo Sul" seria a borda circunferencial — impossível que bússolas em continentes distintos da borda apontassem todas para o mesmo "ponto" da circunferência.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">British Geological Survey — geomagia.org</span>
+        <span class="source-tag">NOAA World Magnetic Model (WMM)</span>
+        <span class="source-tag">ESA Swarm Mission — earth.esa.int</span>
+      </div>
+    </div>
+
+    <!-- T3 -->
+    <div class="arg-card gold">
+      <div class="arg-header">
+        <span class="arg-id id-gold">T3</span>
+        <h3 class="arg-title">Experimento de Eratóstenes (240 a.C.)</h3>
+      </div>
+      <p class="arg-desc">Eratóstenes mediu a circunferência da Terra com uma vara, dois locais e uma proporção simples de sombras. O resultado: ~40.000 km — concordando com medições modernas por satélite a menos de 2% de erro. Esse experimento pode ser reproduzido por qualquer escola hoje.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'t3','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'t3','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="t3-leiga">Às 12h do solstício, em Siena (Egito), o sol ficava reto em cima — sem sombra. Na mesma hora, em Alexandria (800 km ao norte), a sombra de uma vara era 7,2°. Eratóstenes calculou: se 7,2° corresponde a 800 km, então 360° corresponde a 40.000 km. Simples, sem satélites, sem computadores. E funcionou!</div>
+      <div class="arg-panel principio" id="t3-principio">Circunferência = (360°/α) × d. α=7,2° (ângulo de sombra), d=800 km → C = (360/7,2)×800 = 40.000 km. Raio calculado: R = C/2π ≈ 6.366 km. Valor moderno: R equatorial = 6.378 km, polar = 6.357 km (achatamento oblato). Erro de Eratóstenes: <1%. Em um disco plano, as sombras de duas varas à distância d jamais seriam diferentes — seriam perfeitamente paralelas se o sol estivesse infinitamente distante, ou convergentes/divergentes se próximo — nunca o ângulo esférico observado.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Eratóstenes de Cirene, "Sobre a Medição da Terra" (240 a.C.)</span>
+        <span class="source-tag">Carl Sagan, "Cosmos" — Episódio 1 (1980)</span>
+        <span class="source-tag">Projeto Eratóstenes (UFMG/escolas parceiras)</span>
+      </div>
+    </div>
+
+    <!-- T4 -->
+    <div class="arg-card gold">
+      <div class="arg-header">
+        <span class="arg-id id-gold">T4</span>
+        <h3 class="arg-title">Terramotos e Ondas Sísmicas</h3>
+      </div>
+      <p class="arg-desc">Ondas sísmicas de terremotos atravessam o interior da Terra e chegam em sismógrafos ao redor do mundo. O padrão de chegada, a velocidade e os "pontos de sombra" onde certas ondas não chegam revelam com precisão a estrutura interna esférica: crosta, manto, núcleo externo líquido e interno sólido.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'t4','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'t4','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="t4-leiga">Quando um terremoto acontece no Japão, sismógrafos na Austrália, Brasil e Europa detectam o tremor — mas não todos do mesmo jeito. Algumas ondas passam pelo centro e chegam do outro lado; outras não chegam por serem bloqueadas pelo núcleo líquido. Esse mapa de "quem sentiu e quem não sentiu" só faz sentido numa bola com camadas internas.</div>
+      <div class="arg-panel principio" id="t4-principio">Ondas P (longitudinais, atravessam sólidos e líquidos) e ondas S (transversais, só em sólidos) criam zonas de sombra a ~103°–142° do epicentro — evidência do núcleo externo líquido. A velocidade das ondas P aumenta a ~5 km/s na crosta, ~8 km/s no manto superior, ~13 km/s no núcleo interno. A curva de velocidade de Jeffreys-Bullen (1940) modela estrutura esférica e é confirmada por todas as estações sismológicas globais.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">IRIS Earthquake Science — iris.edu</span>
+        <span class="source-tag">Jeffreys & Bullen, "Seismological Tables" (1940)</span>
+        <span class="source-tag">USGS Earthquake Hazards Program — usgs.gov</span>
+      </div>
+    </div>
+
+    <!-- T5 -->
+    <div class="arg-card gold">
+      <div class="arg-header">
+        <span class="arg-id id-gold">T5</span>
+        <h3 class="arg-title">Gravidade e Achatamento Oblato</h3>
+      </div>
+      <p class="arg-desc">A Terra não é uma esfera perfeita — é um esferoide oblato, 21 km mais "gorda" no equador que nos polos por conta da força centrífuga da rotação. A gravidade varia ligeiramente entre o equador (menor: 9,78 m/s²) e os polos (maior: 9,83 m/s²) — diferença medida com gravímetros precisos.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'t5','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'t5','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="t5-leiga">Se você pesasse 70 kg no Brasil (perto do equador), pesaria 70,36 kg na Finlândia (perto do polo). Parece pouco, mas é mensurável com balanças de precisão. Isso acontece porque a Terra gira, o equador se "estufa" um pouco para fora, e você fica um pouquinho mais longe do centro — então a gravidade te puxa menos. Um disco não teria esse comportamento.</div>
+      <div class="arg-panel principio" id="t5-principio">g = GM/r² − ω²r·cos²φ (gravidade em função da latitude φ). O achatamento f = (a−b)/a ≈ 1/298,257 (WGS84), com semieixo equatorial a = 6.378,137 km e polar b = 6.356,752 km. Gravímetros supercondutores medem g com resolução de 10⁻⁹ m/s². O modelo geóide (EGM2008) mapeia variações de g globalmente e é consistente apenas com geometria esférica oblata.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">WGS84 — National Geospatial-Intelligence Agency</span>
+        <span class="source-tag">ESA GOCE Mission — earth.esa.int/goce</span>
+        <span class="source-tag">EGM2008 Geoid Model — NGA/DoD</span>
+      </div>
+    </div>
+
+    <!-- T6 NOVO -->
+    <div class="arg-card gold">
+      <div class="arg-header">
+        <span class="arg-id id-gold">T6</span>
+        <h3 class="arg-title">Efeito Coriolis e a Rotação Real da Terra</h3>
+      </div>
+      <p class="arg-desc">A rotação da Terra desvia objetos em movimento: furacões giram no sentido anti-horário no Hemisfério Norte e horário no Sul. Balas de cânone disparadas ao norte derivam levemente para o leste. Pêndulos de Foucault giram seu plano de oscilação ao longo do dia — todos confirmando uma esfera rotante.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'t6','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'t6','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="t6-leiga">Sabe por que o furacão "roda para um lado" no noticiário? Porque a Terra está girando e isso força o vento a curvar. No norte, vai para um lado; no sul, vai para o outro. Isso acontece em tempestades, em pias de banheiro em alta latitude, e é usado por engenheiros militares para calibrar artilharia de longa distância. Num disco parado, não existiria esse desvio.</div>
+      <div class="arg-panel principio" id="t6-principio">Força de Coriolis: F_c = −2m(Ω × v), onde Ω é o vetor angular da rotação terrestre (7,27×10⁻⁵ rad/s). Deflexão máxima nos polos, zero no equador. O Pêndulo de Foucault demonstrou a rotação em 1851: período de rotação do plano = 24h/sin(φ) horas. Em Paris (φ=48,8°), período ≈ 31,8 h. Em São Paulo (φ=−23,5°), ≈ 60,4 h. Repetido em milhares de museus e universidades globalmente.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Léon Foucault, Comptes Rendus (1851)</span>
+        <span class="source-tag">NOAA Meteorology — nhc.noaa.gov</span>
+        <span class="source-tag">Pêndulo de Foucault do Museu do Amanhã (Rio de Janeiro)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 3. NAVEGAÇÃO E ENGENHARIA ═══ -->
+<section class="section" id="engenharia">
+  <div class="section-header">
+    <div class="section-icon icon-green">📡</div>
+    <div>
+      <h2 class="section-title">Navegação, Satélites e Engenharia</h2>
+      <p class="section-desc">Tecnologias do cotidiano que dependem da curvatura da Terra para funcionar.</p>
+    </div>
+  </div>
+
+  <div class="visual-proof">
+    <div class="proof-globe-wrap">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="pg" cx="35%" cy="35%">
+            <stop offset="0%" stop-color="#1a6ab5"/>
+            <stop offset="100%" stop-color="#04213e"/>
+          </radialGradient>
+        </defs>
+        <circle cx="50" cy="50" r="45" fill="url(#pg)"/>
+        <g stroke="rgba(79,195,247,0.25)" stroke-width="0.6" fill="none">
+          <ellipse cx="50" cy="50" rx="45" ry="14"/>
+          <ellipse cx="50" cy="50" rx="45" ry="30"/>
+          <line x1="50" y1="5" x2="50" y2="95"/>
+          <line x1="5" y1="50" x2="95" y2="50"/>
+        </g>
+        <!-- satellites -->
+        <circle cx="85" cy="22" r="4" fill="#4fc3f7" opacity="0.9"/>
+        <line x1="85" y1="22" x2="50" y2="50" stroke="#4fc3f7" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+        <circle cx="15" cy="30" r="4" fill="#4fc3f7" opacity="0.9"/>
+        <line x1="15" y1="30" x2="50" y2="50" stroke="#4fc3f7" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+        <circle cx="50" cy="10" r="4" fill="#4fc3f7" opacity="0.9"/>
+        <line x1="50" y1="10" x2="50" y2="50" stroke="#4fc3f7" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+        <!-- you are here dot -->
+        <circle cx="50" cy="50" r="3" fill="#c9a84c"/>
+      </svg>
+    </div>
+    <div class="proof-text">
+      <h3>O seu celular prova que a Terra é redonda</h3>
+      <p>O GPS usa trilateração 3D em geometria esférica. Se a Terra fosse plana, os algoritmos de posicionamento retornariam coordenadas erradas em qualquer lugar do planeta. Seu aplicativo de mapas funcionaria apenas por acaso — mas funciona com precisão de metros no mundo inteiro, o tempo todo.</p>
+    </div>
+  </div>
+
+  <div class="args-grid">
+
+    <!-- N1 -->
+    <div class="arg-card green">
+      <div class="arg-header">
+        <span class="arg-id id-green">N1</span>
+        <h3 class="arg-title">Cabos de Internet Submarinos</h3>
+      </div>
+      <p class="arg-desc">Mais de 1,3 milhão de km de cabos de fibra óptica conectam continentes pelo fundo do oceano. Esses cabos têm comprimentos calculados para a curvatura da Terra. Os cabos existem, são reparados por empresas privadas, e seus mapas são públicos.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'n1','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'n1','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="n1-leiga">A internet que você usa agora provavelmente veio por cabos físicos no fundo do mar. Esses cabos ligam Brasil-Europa, Brasil-EUA, Japão-EUA — com comprimentos medidos para a curvatura real da Terra. Quando um cabo quebra (acontece sempre), empresas privadas como a SubCom mandam navios especializados para consertar. Eles encontram o cabo usando as coordenadas geodésicas esféricas.</div>
+      <div class="arg-panel principio" id="n1-principio">Comprimento geodésico entre dois pontos em uma esfera: d = R × Δσ (fórmula de Vincenty para esferoide). O cabo MAREA (Virgínia-Espanha) tem 6.600 km. O cable map (submarinecablemap.com) mostra 530+ cabos operacionais. Reparos usam ROVs (veículos subaquáticos) com coordenadas geodésicas em WGS84. Qualquer erro geométrico sistemático do modelo de Terra plana tornaria os reparos impossíveis de executar.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">TeleGeography Submarine Cable Map — submarinecablemap.com</span>
+        <span class="source-tag">MAREA Cable — Microsoft/Facebook (2017)</span>
+        <span class="source-tag">ITU Submarine Cable Facts (2023)</span>
+      </div>
+    </div>
+
+    <!-- N2 -->
+    <div class="arg-card green">
+      <div class="arg-header">
+        <span class="arg-id id-green">N2</span>
+        <h3 class="arg-title">Antenas de TV Satélite</h3>
+      </div>
+      <p class="arg-desc">Antenas parabólicas de TV são apontadas para satélites geoestacionários a 35.786 km de altitude. Dependendo da longitude do satélite e da localização do usuário, o ângulo de elevação e de azimute muda — calculado por geometria esférica. O ângulo errado = sem sinal.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'n2','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'n2','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="n2-leiga">Um instalador de antena de TV satélite usa um aplicativo que diz: "aponte para 46° no céu, direção nordeste". Se ele apontar errado, não pega. Esses ângulos são calculados assumindo que você está na superfície de uma esfera. No Rio de Janeiro, o ângulo é diferente de São Paulo. Em Buenos Aires, diferente ainda. Isso só faz sentido numa Terra redonda.</div>
+      <div class="arg-panel principio" id="n2-principio">Cálculo de apontamento: Az = atan2(sin(Δλ), tan(φs)·cos(φu) − sin(φu)·cos(Δλ)); El = atan(cos(Δλ)·cos(φu) − sin(φu)/sin(El_interméd)). Satélite Star One C2 (70°O): El em São Paulo ≈ 65°; El em Manaus ≈ 73°; El em Buenos Aires ≈ 51°. A variação de ângulos entre cidades é matematicamente derivada da curvatura esférica. Não há solução plana equivalente que produza os mesmos ângulos funcionais observados.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Embratel Star One — starone.com.br</span>
+        <span class="source-tag">DishPointer — dishpointer.com</span>
+        <span class="source-tag">ITU Radio Regulations — itu.int</span>
+      </div>
+    </div>
+
+    <!-- N3 -->
+    <div class="arg-card green">
+      <div class="arg-header">
+        <span class="arg-id id-green">N3</span>
+        <h3 class="arg-title">Excesso Esférico em Grandes Pontes</h3>
+      </div>
+      <p class="arg-desc">Em pontes suspensas muito longas, os pilares não são paralelos entre si: o topo deles é alguns centímetros mais afastado do que a base, compensando a curvatura da Terra. A Ponte Humber (1.410 m) e a Verrazzano-Narrows têm essa diferença documentada nos projetos de engenharia civil.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'n3','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'n3','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="n3-leiga">Quando você constrói dois prédios altíssimos muito longe um do outro usando o prumo (um fio com peso) para deixar reto, o topo dos prédios fica ligeiramente mais afastado do que a base. Isso é porque o chão faz uma curva entre eles. Engenheiros civis calculam e compensam essa curvatura em todas as grandes construções.</div>
+      <div class="arg-panel principio" id="n3-principio">Excesso esférico: E = (Área / R²) × (180°/π). Para dois pontos a d = 1,4 km de distância, a divergência vertical entre prumos perfeitamente verticais é δh ≈ d² / (2R) ≈ (1400)² / (2×6.371.000) ≈ 0,154 m = 15,4 cm. Documentado nos cálculos de engenharia da Ponte Humber (UK): afastamento dos pilares de 36 mm. A geodésia de precisão (levantamento geodésico) usa geometria esférica/elipsoidal obrigatoriamente.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">Humber Bridge Technical Report — humberbridge.co.uk</span>
+        <span class="source-tag">Engenharia Civil e Topografia Estrutural (Vanicek & Krakiwsky, 1986)</span>
+        <span class="source-tag">IBGE — Geodésia (geodesia.ibge.gov.br)</span>
+      </div>
+    </div>
+
+    <!-- N4 -->
+    <div class="arg-card green">
+      <div class="arg-header">
+        <span class="arg-id id-green">N4</span>
+        <h3 class="arg-title">O Sistema GPS e a Relatividade</h3>
+      </div>
+      <p class="arg-desc">O GPS usa 24+ satélites a 20.200 km de altitude. Para funcionar com precisão de metros, o sistema corrige o tempo usando a Relatividade Geral e Especial de Einstein: relógios nos satélites adiantam 38 microsegundos/dia. Sem essas correções relativísticas, o GPS derivaria 10 km por dia.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'n4','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'n4','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="n4-leiga">Seu celular sabe onde você está porque pega o sinal de pelo menos 3 satélites e mede exatamente quanto tempo o sinal demorou para chegar. Se os satélites não estivessem voando em órbita ao redor de uma esfera, a matemática do sinal colocaria você no lugar errado. O GPS funciona em qualquer lugar do mundo — prova que os satélites realmente dão voltas num planeta esférico.</div>
+      <div class="arg-panel principio" id="n4-principio">Trilateração esférica: posição determinada por interseção de 3+ esferas de raio d_i = c×Δt_i. Sistema de referência: WGS84 (elipsoide). Correção relativística: +45,9 μs/dia (dilatação gravitacional — Relatividade Geral) −7,1 μs/dia (dilatação do tempo — Relatividade Especial) = neto +38,4 μs/dia. Sem correção: erro acumulado de 11 km/dia. A Força Espacial dos EUA publica a Interface Control Document (ICD-GPS-200) com todos os cálculos abertos.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">GPS Interface Control Document ICD-GPS-200 — gps.gov</span>
+        <span class="source-tag">Neil Ashby, "Relativity in the GPS" — livingreviews.org (2003)</span>
+        <span class="source-tag">GNSS — European Space Agency</span>
+      </div>
+    </div>
+
+    <!-- N5 -->
+    <div class="arg-card green">
+      <div class="arg-header">
+        <span class="arg-id id-green">N5</span>
+        <h3 class="arg-title">Voos no Hemisfério Sul</h3>
+      </div>
+      <p class="arg-desc">Voos como Sydney–Santiago (Chile) e Perth–Joanesburgo duram 12–14 horas passando próximos à Antártica. No mapa terraplanista, essas cidades estão nas bordas opostas do disco — o voo direto levaria 35+ horas. Esses voos são rastreados em tempo real por qualquer pessoa com acesso ao FlightRadar24.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'n5','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'n5','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="n5-leiga">Abra o FlightRadar24 agora e veja um voo da Qantas de Sydney para Santiago. Ele vai para o sul, raspa perto da Antártica, e chega ao Chile em ~14 horas. No mapa da Terra Plana, Austrália e Chile estão em pontos opostos da borda do disco — seriam 35+ horas. Qualquer um pode verificar isso com o celular agora mesmo, ao vivo.</div>
+      <div class="arg-panel principio" id="n5-principio">Rota ortodrômica (grande círculo) Sydney (−33,9°S, 151,2°L) → Santiago (−33,4°S, 70,7°O): distância = R × arccos[sin(φ₁)sin(φ₂) + cos(φ₁)cos(φ₂)cos(Δλ)] ≈ 11.360 km. Tempo @ 900 km/h ≈ 12,6 h. No mapa de disco terraplanista (projeção azimutal equidistante centrada no Ártico), distância Sydney-Santiago ≈ 28.000 km — requereria ~31 horas. Contradição direta com tempo real de voo observado.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">FlightRadar24 — flightradar24.com (tempo real)</span>
+        <span class="source-tag">Qantas Airways — Rota QF27 (Sydney–Santiago)</span>
+        <span class="source-tag">LATAM Airlines — Rotas hemisfério sul</span>
+      </div>
+    </div>
+
+    <!-- N6 NOVO -->
+    <div class="arg-card green">
+      <div class="arg-header">
+        <span class="arg-id id-green">N6</span>
+        <h3 class="arg-title">Navegação Astronômica por Séculos</h3>
+      </div>
+      <p class="arg-desc">Durante séculos, navegadores como Vasco da Gama e Cristóvão Colombo calcularam rotas oceânicas usando a esfericidade da Terra, medições de latitude por ângulo de estrelas (sextante) e tabelas de declinação solar. Chegaram exatamente onde planejaram — prova prática de que a geometria esférica funciona.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'n6','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'n6','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="n6-leiga">Séculos antes do GPS, navegadores no meio do oceano sabiam exatamente onde estavam medindo o ângulo das estrelas com o horizonte. Eles usavam tabelas calculadas para uma Terra esférica. Se a Terra fosse plana, as tabelas estariam erradas, e os navios acabariam a centenas de quilômetros dos destinos. Mas eles chegaram onde queriam — Índia, Brasil, América.</div>
+      <div class="arg-panel principio" id="n6-principio">Latitude por altitude meridional: φ = 90° − z + δ, onde z = ângulo zenital e δ = declinação da estrela. Longitude por diferença de tempo cronométrico. A circum-navegação de Fernão de Magalhães (1519–1522) provou a esfericidade ao retornar ao ponto de partida pelo lado oposto, cobrindo ~60.000 km documentados. As Efemériades Náuticas (ainda publicadas anualmente) usam geometria esférica/elipsoidal e funcionam com precisão de menos de 1 milha náutica.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">The American Practical Navigator (Bowditch, 2019)</span>
+        <span class="source-tag">Náutica do Século XVI — Museu de Marinha, Lisboa</span>
+        <span class="source-tag">Circum-navegação de Fernão de Magalhães (1519–1522)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 4. OBSERVAÇÃO ESPACIAL ═══ -->
+<section class="section" id="espaco">
+  <div class="section-header">
+    <div class="section-icon icon-coral">🛰️</div>
+    <div>
+      <h2 class="section-title">Observação Espacial — Verificável por Qualquer Pessoa</h2>
+      <p class="section-desc">Não é necessário confiar em governos. As provas estão ao alcance de qualquer amador com equipamentos acessíveis.</p>
+    </div>
+  </div>
+
+  <div class="args-grid">
+
+    <!-- E1 -->
+    <div class="arg-card coral">
+      <div class="arg-header">
+        <span class="arg-id id-coral">E1</span>
+        <h3 class="arg-title">A ISS Visível a Olho Nu</h3>
+      </div>
+      <p class="arg-desc">A Estação Espacial Internacional orbita a 400 km de altitude a ~28.000 km/h, completando uma volta a cada 92 minutos. Qualquer pessoa pode vê-la a olho nu como uma "estrela" rápida e brilhante atravessando o céu — usando apenas o aplicativo gratuito "Spot the Station" da NASA.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'e1','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'e1','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="e1-leiga">Você não precisa acreditar em nenhum governo. Baixe o aplicativo "ISS Detector" ou acesse spotthestation.nasa.gov, veja o horário de passagem sobre sua cidade, saia de casa à noite na hora certa, olhe para o céu e veja com seus próprios olhos um laboratório espacial do tamanho de um campo de futebol voando brilhante. Com um telescópio barato, dá para ver os painéis solares.</div>
+      <div class="arg-panel principio" id="e1-principio">Velocidade orbital: v = √(GM/r) = √(3,986×10¹⁴ / 6.771.000) ≈ 7.660 m/s. Período T = 2πr/v ≈ 5.544 s ≈ 92 min. Magnitude visual: −3,0 a −4,0 (mais brilhante que Vênus). O trânsito da ISS em frente ao Sol ou Lua é fotografado por astrofotógrafos amadores diariamente em todo o mundo — verificação independente com timestamps, coordenadas e telescópios privados.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">NASA Spot the Station — spotthestation.nasa.gov</span>
+        <span class="source-tag">Heavens-Above — heavens-above.com</span>
+        <span class="source-tag">ISS Transit Finder — transit-finder.com</span>
+      </div>
+    </div>
+
+    <!-- E2 -->
+    <div class="arg-card coral">
+      <div class="arg-header">
+        <span class="arg-id id-coral">E2</span>
+        <h3 class="arg-title">Retroreflectores Lunares</h3>
+      </div>
+      <p class="arg-desc">As missões Apollo e Lunokhod soviético deixaram espelhos especiais na Lua. Qualquer observatório (incluindo universidades privadas e grupos amadores) pode disparar um pulso laser nesses espelhos e medir exatamente 384.400 km de distância — tempo de ida e volta: ~2,5 segundos.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'e2','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'e2','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="e2-leiga">Astronautas deixaram espelhos no chão da Lua. Cientistas de vários países — inclusive grupos amadores — disparam lasers nesses espelhos e cronometram quanto tempo a luz leva para voltar. Dá ~2,5 segundos. A distância calculada é 384.400 km. Isso destrói o modelo que diz que a Lua é uma lâmpada a poucos quilômetros de distância no "domo".</div>
+      <div class="arg-panel principio" id="e2-principio">D = (c × t) / 2. Com t ≈ 2,562 s e c = 299.792.458 m/s → D ≈ 384.400 km. Experimento Lunar Laser Ranging (LLR) realizado por: Observatório McDonald (Texas), Observatório Côte d'Azur (França), Observatório Apache Point (APOLLO — New Mexico) e outros. Precisão atual: ±1 mm. O Lunar Laser Ranging também confirma a deriva da Lua (3,8 cm/ano se afastando) e testa a Relatividade Geral de Einstein.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">APOLLO LLR — physics.ucsd.edu</span>
+        <span class="source-tag">Observatoire de la Côte d'Azur — oca.eu</span>
+        <span class="source-tag">Murphy et al., PASP, 2008 — doi:10.1086/520951</span>
+      </div>
+    </div>
+
+    <!-- E3 -->
+    <div class="arg-card coral">
+      <div class="arg-header">
+        <span class="arg-id id-coral">E3</span>
+        <h3 class="arg-title">Imagens de Satélites Meteorológicos por Rádio Amador</h3>
+      </div>
+      <p class="arg-desc">Satélites como NOAA-15, NOAA-19 e Meteor-M2 transmitem imagens em rádio VHF (137 MHz). Com R$100 em peças eletrônicas (receptor SDR + antena V-dipole), qualquer pessoa pode capturar essas imagens diretamente — sem intermediários governamentais — mostrando a Terra redonda com as nuvens reais do momento.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'e3','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'e3','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="e3-leiga">Você pode comprar R$100 em peças eletrônicas na internet, montar uma antena na sua laje e capturar pessoalmente o sinal de rádio de satélites meteorológicos voando sobre sua cidade. Seu computador "revela" a foto automaticamente. A imagem mostra a curvatura da Terra e as mesmas nuvens do noticiário — sem passar por nenhum governo ou NASA.</div>
+      <div class="arg-panel principio" id="e3-principio">Protocolo: receptor SDR RTL2832U (~R$40), antena V-dipole em 137 MHz (~R$20 em fio), software WXtoImg ou SatDump (gratuito). Satélites NOAA (APT 137 MHz) e Meteor-M2 (LRPT 137,1 MHz) transmitem sem criptografia. Imagem de disco completo: satélites geoestacionários GOES-16 (NOAA, 75°O) e Himawari-9 (JMA, 140°L) — dados brutos públicos em cdn.star.nesdis.noaa.gov e www.data.jma.go.jp. Resolução de até 500 m/pixel.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">RTL-SDR Community — rtl-sdr.com</span>
+        <span class="source-tag">NOAA GOES Full Disk — cdn.star.nesdis.noaa.gov</span>
+        <span class="source-tag">SatDump Software — github.com/SatDump</span>
+      </div>
+    </div>
+
+    <!-- E4 NOVO -->
+    <div class="arg-card coral">
+      <div class="arg-header">
+        <span class="arg-id id-coral">E4</span>
+        <h3 class="arg-title">Outros Planetas São Esféricos</h3>
+      </div>
+      <p class="arg-desc">Todos os planetas visíveis a olho nu — Saturno, Júpiter, Marte, Vênus — são claramente esféricos através de qualquer telescópio amador. Se a gravidade forma esferas em Júpiter (1.300 Terras de volume), por que formaria um disco na Terra? A física não tem exceção para o nosso planeta.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'e4','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'e4','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="e4-leiga">Com um telescópio de R$500, dá para ver os anéis de Saturno, as faixas de Júpiter, e que todos eles são claramente bolas. Você consegue ver as luas de Júpiter orbitando ao redor dele. Se a gravidade funciona assim em todos os outros planetas — por que a Terra seria a única exceção e seria um disco? Isso nunca é explicado de forma coerente pelos terraplanistas.</div>
+      <div class="arg-panel principio" id="e4-principio">Equilíbrio hidrostático: para um corpo com massa M > ~5×10²¹ kg, a gravidade supera a rigidez estrutural e o objeto assume forma esférica (definição IAU de planeta-anão). A Terra tem M = 5,97×10²⁴ kg, 300× acima do limiar. As mesmas leis de Newton/Einstein que mantêm a Terra esférica mantêm todos os planetas esféricos. Um "caso especial" para a Terra exigiria modificar toda a física gravitacional — o que é diretamente refutado pelos resultados de missões a cada planeta do Sistema Solar.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">JPL Planetary Fact Sheets — nssdc.gsfc.nasa.gov</span>
+        <span class="source-tag">IAU Planet Definition (2006) — iau.org</span>
+        <span class="source-tag">Física Gravitacional — Newton, Principia (1687)</span>
+      </div>
+    </div>
+
+    <!-- E5 NOVO -->
+    <div class="arg-card coral">
+      <div class="arg-header">
+        <span class="arg-id id-coral">E5</span>
+        <h3 class="arg-title">Imagens da Terra de Missões Privadas</h3>
+      </div>
+      <p class="arg-desc">Fotos da Terra esférica não vêm apenas da NASA. SpaceX, Blue Origin, Rocket Lab, agências japonesa (JAXA), europeia (ESA), chinesa (CNSA), russa (Roscosmos) e indiana (ISRO) — rivais geopolíticos com interesses opostos — todas mostram a mesma Terra redonda. A "conspiração" precisaria incluir todos eles.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'e5','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'e5','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="e5-leiga">Para que a Terra fosse plana e "escondida", precisaria existir um acordo secreto entre: EUA, Rússia (inimigos históricos), China, Índia (rivais de décadas), a União Europeia, o Japão, Israel, e mais uma dezena de países — além de empresas privadas como SpaceX e Blue Origin. Todos eles mostrariam a mesma Terra redonda? Uma conspiração desse tamanho seria impossível de manter por 70 anos.</div>
+      <div class="arg-panel principio" id="e5-principio">Evidência institucional independente: ESA (Europa), JAXA (Japão), CNSA (China), ISRO (Índia), Roscosmos (Rússia), SpaceX, Blue Origin, Rocket Lab, Virgin Galactic, KARI (Coreia do Sul), CSA (Canadá), UKSA (UK) — todas organizações de países com conflitos geopolíticos reais. A hipótese de conspiração requer que adversários históricos (EUA/URSS durante a Guerra Fria) coordenassem fabricação de evidências. A navalha de Occam e a análise de probabilidade bayesiana rejeitam massivamente essa hipótese.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">SpaceX — spacex.com/launches</span>
+        <span class="source-tag">ESA Earth from Space — esa.int</span>
+        <span class="source-tag">ISRO — isro.gov.in</span>
+      </div>
+    </div>
+
+    <!-- E6 NOVO -->
+    <div class="arg-card coral">
+      <div class="arg-header">
+        <span class="arg-id id-coral">E6</span>
+        <h3 class="arg-title">Balões de Alta Altitude — Amadores</h3>
+      </div>
+      <p class="arg-desc">Grupos amadores, clubes de ciência e estudantes do mundo inteiro lançam balões meteorológicos com câmeras GoPro até 30–40 km de altitude. As imagens captadas mostram claramente a curvatura da Terra no horizonte — sem nenhum envolvimento de governos ou agências espaciais.</p>
+      <div class="arg-tabs">
+        <button class="arg-tab-btn active" onclick="showTab(this,'e6','leiga')">👶 Fácil</button>
+        <button class="arg-tab-btn" onclick="showTab(this,'e6','principio')">🔬 Técnico</button>
+      </div>
+      <div class="arg-panel leiga active" id="e6-leiga">Clubes de estudantes gastam R$500 em um balão de festa gigante, uma câmera GoPro e um rastreador GPS, soltam no quintal, e a câmera sobe até 35 km de altitude filmando tudo. Os vídeos amadores mostram claramente a curvatura da Terra. Não é a NASA — são professores, geeks, estudantes do mundo inteiro fazendo isso por diversão.</div>
+      <div class="arg-panel principio" id="e6-principio">A curvatura se torna visível a partir de ~20 km de altitude com câmera de campo visual >60°. A 35 km, a curvatura horizontal é inconfundível. Dezenas de canais do YouTube documentam lançamentos independentes: Project Loon amadores, MIT Highaltitude Ballooning Club, UK StratoStar. A lei do inverso do quadrado da dispersão do horizonte confirma geometria esférica: para altitude h, distância ao horizonte = √(2Rh + h²) ≈ √(2Rh) para h << R.</div>
+      <div class="sources">
+        <div class="sources-label">Fontes</div>
+        <span class="source-tag">MIT Amateur HAB — balloonproject.mit.edu</span>
+        <span class="source-tag">UKHAS (UK High Altitude Society) — ukhas.org.uk</span>
+        <span class="source-tag">YouTube: "High Altitude Balloon" — verificável</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CONCLUSÃO ═══ -->
+<div class="conclusion">
+  <div class="conclusion-inner">
+    <h2>A realidade não precisa de crença.<br>Ela só precisa de observação.</h2>
+    <p>
+      Acreditar que a Terra é plana exige rejeitar simultaneamente: a física de Newton, a relatividade de Einstein, a óptica de Snell, a geometria de Euclides e Riemann, a sismologia, o magnetismo, a termodinâmica, a mecânica orbital, e as observações independentes de dezenas de nações rivais, milhares de cientistas e qualquer pessoa com um telescópio barato no quintal.
+    </p>
+    <p style="margin-top: 1rem;">
+      O Globo não é uma teoria — é uma realidade empírica, logística e calculável confirmada milhões de vezes por dia, por todos nós, em todo lugar do mundo.
+    </p>
+    <div class="conclusion-badge">
+      🌍 A Terra é aproximadamente esférica. Isso foi provado há 2.350 anos.
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>Compilação científica baseada em fontes primárias públicas e verificáveis. &nbsp;|&nbsp; Todas as fontes são acessíveis gratuitamente. &nbsp;|&nbsp; A ciência é aberta, transparente e reproduzível.</p>
+  <p style="margin-top: 0.5rem;">Nenhum governo foi necessário para produzir este conteúdo — apenas física.</p>
+</footer>
+
+<script>
+function showTab(btn, cardId, panel) {
+  const card = btn.closest('.arg-card');
+  card.querySelectorAll('.arg-tab-btn').forEach(b => b.classList.remove('active'));
+  card.querySelectorAll('.arg-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const target = document.getElementById(cardId + '-' + panel);
+  if (target) target.classList.add('active');
+}
+
+// Animate hero stats counting up
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 1500;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    if (target === 0) { el.textContent = '0'; return; }
+    el.textContent = Math.floor(eased * target) + (suffix || '');
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const nums = e.target.querySelectorAll('.hero-stat-num');
+      const vals = [20, 4, 2350, 0];
+      const suffixes = ['+', '', '', ''];
+      nums.forEach((el, i) => animateCount(el, vals[i], suffixes[i]));
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+const statsEl = document.querySelector('.hero-stats');
+if (statsEl) observer.observe(statsEl);
+</script>
+
+</body>
+</html>
